@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 import { JokeListComponent } from './jokes/jokes.component';
 import { JokeComponent } from './joke/joke.component';
 import { CreateJokeComponent } from './createJoke/createJoke.component';
-// providers
-import { LoginService } from './login.service';
+// directive
+import { CardHoverDirective } from './directives/cardHover.directive';
 
 @NgModule({
     bootstrap: [ 
@@ -24,10 +24,8 @@ import { LoginService } from './login.service';
         AppComponent,
         JokeListComponent,
         JokeComponent,
-        CreateJokeComponent
-    ],
-    providers: [
-      LoginService
-  ],
+        CreateJokeComponent,
+        CardHoverDirective
+    ]
 })
 export class AppModule { }

@@ -23,7 +23,7 @@ JokeComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'joke',
-        template: "\n        <div>\n            <div class=\"card card-block\">\n                <div class=\"card-title\">\n                    <h1>{{joke.setup}}</h1>\n                </div>\n                <div class=\"card-text\" [hidden]=\"joke.hide\">\n                    <p>{{joke.punchline}}</p>\n                </div>\n                <div>\n                    <button class=\"btn btn-warning\" (click)=\"joke.togglePunchline()\">Toggle</button>\n                </div>\n            </div>\n            <div class=\"row\" style=\"min-height:5px\" ></div>\n        </div>\n    "
+        template: "\n        <div>\n            <div class=\"card card-block\" cardHover>\n                <div class=\"card-title\">\n                    <ng-content select=\".setup\"></ng-content>\n                </div>\n                <div class=\"card-text\" [hidden]=\"joke.hide\">\n                    <ng-content select=\".punchline\"></ng-content>\n                </div>\n                <div>\n                    <button class=\"btn btn-warning\" (click)=\"joke.togglePunchline()\">Toggle</button>\n                </div>\n            </div>\n            <div class=\"row\" style=\"min-height:5px\" ></div>\n        </div>\n    "
     })
 ], JokeComponent);
 exports.JokeComponent = JokeComponent;

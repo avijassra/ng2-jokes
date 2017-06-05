@@ -1,22 +1,21 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LoginService } from './login.service';
+import { IJoke, Joke } from './joke/joke'
 
 @Component({
     moduleId: module.id,
     selector: 'my-app',    
     template: `
         <div class="container">
-            <joke-list></joke-list>
+            <joke-list>
+                <joke [joke]="joke">
+                    <h1 class="setup">{{joke.setup}}</h1>
+                    <p class="punchline">{{joke.punchline}}</p>
+                </joke>
+            </joke-list>
         </div>
     `,
 })
 export class AppComponent { 
-    constructor(private loginService: LoginService) { }
-
-    onUserLogin(value: any): void {
-        debugger;
-        let resp = this.loginService.validateUser({username: value.controls.username.value, lastname: value.controls.lastname.value});
-        alert(resp)
-    }
+    joke: IJoke = new Joke("What did the Ranch told the frige?", "Close the door, I am dressing here");
 }

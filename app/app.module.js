@@ -15,8 +15,8 @@ var app_component_1 = require("./app.component");
 var jokes_component_1 = require("./jokes/jokes.component");
 var joke_component_1 = require("./joke/joke.component");
 var createJoke_component_1 = require("./createJoke/createJoke.component");
-// providers
-var login_service_1 = require("./login.service");
+// directive
+var cardHover_directive_1 = require("./directives/cardHover.directive");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,11 +36,9 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             jokes_component_1.JokeListComponent,
             joke_component_1.JokeComponent,
-            createJoke_component_1.CreateJokeComponent
-        ],
-        providers: [
-            login_service_1.LoginService
-        ],
+            createJoke_component_1.CreateJokeComponent,
+            cardHover_directive_1.CardHoverDirective
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;

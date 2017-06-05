@@ -6,12 +6,12 @@ import { IJoke } from '../joke/joke';
     selector: 'joke',
     template: `
         <div>
-            <div class="card card-block">
+            <div class="card card-block" cardHover>
                 <div class="card-title">
-                    <h1>{{joke.setup}}</h1>
+                    <ng-content select=".setup"></ng-content>
                 </div>
                 <div class="card-text" [hidden]="joke.hide">
-                    <p>{{joke.punchline}}</p>
+                    <ng-content select=".punchline"></ng-content>
                 </div>
                 <div>
                     <button class="btn btn-warning" (click)="joke.togglePunchline()">Toggle</button>
