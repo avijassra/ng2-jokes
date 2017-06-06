@@ -14,7 +14,10 @@ import { SimpleService } from '../services/simple.service';
             </form>
             <child-di></child-di>
         </div>
-    `
+    `,
+    styles: [
+        '.parent { background-color: #D0E751; padding: 10px; } '
+    ]
 })
 export class ParentDiComponent {
     constructor(private service: SimpleService) { }

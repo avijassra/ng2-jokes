@@ -21,7 +21,7 @@ ParentDiContainerComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'parent-di-container',
-        template: "\n        <div class=\"row\" >\n            <div class=\"col-xs-6\" >\n                <parent-di></parent-di>\n            </div>\n            <div class=\"col-xs-6\" >\n                <parent-di></parent-di>\n            </div>\n        </div>\n    "
+        template: "\n        <div class=\"row\" >\n            <div class=\"col-lg-6\" >\n                <parent-di></parent-di>\n            </div>\n            <div class=\"col-lg-6\" >\n                <parent-di></parent-di>\n            </div>\n        </div>\n    "
     }),
     __metadata("design:paramtypes", [simple_service_1.SimpleService])
 ], ParentDiContainerComponent);

@@ -21,7 +21,10 @@ ParentDiComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'parent-di',
-        template: "\n        <div class=\"parent\" >\n            <p>Parent DI</p>\n            <form novalidation>\n                <div class=\"form-group\" >\n                    <input type=\"text\" class=\"form-control\" name=\"value\" [(ngModel)]=\"service.value\" >\n                </div>\n            </form>\n            <child-di></child-di>\n        </div>\n    "
+        template: "\n        <div class=\"parent\" >\n            <p>Parent DI</p>\n            <form novalidation>\n                <div class=\"form-group\" >\n                    <input type=\"text\" class=\"form-control\" name=\"value\" [(ngModel)]=\"service.value\" >\n                </div>\n            </form>\n            <child-di></child-di>\n        </div>\n    ",
+        styles: [
+            '.parent { background-color: #D0E751; padding: 10px; } '
+        ]
     }),
     __metadata("design:paramtypes", [simple_service_1.SimpleService])
 ], ParentDiComponent);

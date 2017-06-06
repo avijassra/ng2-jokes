@@ -21,7 +21,10 @@ ChildDiComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'child-di',
-        template: "\n        <div class=\"child\" >\n            <p>Child DI</p>\n            {{ service.value }}\n        </div>\n    "
+        template: "\n        <div class=\"child\" >\n            <p>Child DI</p>\n            {{ service.value }}\n        </div>\n    ",
+        styles: [
+            '.child { background-color: #229CDD; padding: 10px; } '
+        ]
     }),
     __metadata("design:paramtypes", [simple_service_1.SimpleService])
 ], ChildDiComponent);
