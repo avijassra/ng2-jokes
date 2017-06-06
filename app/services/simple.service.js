@@ -7,17 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var SimpleService = (function () {
+    function SimpleService() {
     }
-    return AppComponent;
+    return SimpleService;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'my-app',
-        template: "\n        <div class=\"container\">\n            <nav>\n                <a>Navigation:</a>\n                <ul>\n                    <li><a [routerLink]=\"['jokes']\">Jokes</a></li>\n                    <li><a [routerLink]=\"['di-test']\">DI Test</a></li>\n                </ul>\n            </nav>\n            <router-outlet></router-outlet>\n        </div>\n    ",
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+SimpleService = __decorate([
+    core_1.Injectable()
+], SimpleService);
+exports.SimpleService = SimpleService;
+//# sourceMappingURL=simple.service.js.map
