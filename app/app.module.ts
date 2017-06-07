@@ -6,21 +6,30 @@ import { Routes, RouterModule } from '@angular/router';
 
 // components
 import { AppComponent } from './app.component';
-import { JokeContainerComponent } from './jokes/jokes-container.component';
-import { JokeListComponent } from './jokes/jokes.component';
-import { JokeComponent } from './joke/joke.component';
-import { CreateJokeComponent } from './createJoke/createJoke.component';
-import { ParentDiContainerComponent } from './parentDi/parent-container.component';
-import { ChildDiComponent } from './childDi/child-di.component';
-import { ParentDiComponent } from './parentDi/parent-di.component';
+import { JokeContainerComponent } from './components/jokes/jokes-container.component';
+import { JokeListComponent } from './components/jokes/jokes.component';
+import { JokeComponent } from './components/joke/joke.component';
+import { CreateJokeComponent } from './components/createJoke/createJoke.component';
+import { ParentDiContainerComponent } from './components/parentDi/parent-container.component';
+import { ChildDiComponent } from './components/childDi/child-di.component';
+import { ParentDiComponent } from './components/parentDi/parent-di.component';
+import { UserComponent } from './components/user/user.component';
+import { ItunesSearchComponent } from './components/itunesSearch/itunes-search.component';
 // directive
 import { CardHoverDirective } from './directives/cardHover.directive';
+// Model
+import { SimpleModel } from './models/simple.model';
+import { UserModel } from './models/user.model';
+import { SearchItem } from './models/searchItem.model'
 //Service
-import { SimpleService } from './services/simple.service';
+import { UserService } from './services/user.service';
+import { SearchService } from './services/search.service';
 
 const routes: Routes = [
     { path: 'jokes', component: JokeContainerComponent },
     { path: 'di-test', component: ParentDiContainerComponent },
+    { path: 'users', component: UserComponent },
+    { path: 'itunes-search', component: ItunesSearchComponent },
     { path: '', redirectTo: 'jokes', pathMatch: 'full' },
 ];
 
@@ -43,10 +52,16 @@ const routes: Routes = [
         CardHoverDirective,
         ParentDiContainerComponent,
         ParentDiComponent,
-        ChildDiComponent
+        ChildDiComponent,
+        UserComponent,
+        ItunesSearchComponent
     ],
     providers: [
-        SimpleService
+        SimpleModel,
+        UserService,
+        SearchService,
+        SearchItem,
+        UserModel
     ],
 })
 export class AppModule { }
