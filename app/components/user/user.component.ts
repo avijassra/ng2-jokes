@@ -57,7 +57,11 @@ export class UserComponent implements OnInit {
     }
 
     onSubmit(): void {
-        this.userSrvc
-            .Post(this.model);
+        this.userSrvc.Post(this.model)
+            .then(resp => {
+                    debugger;
+                    this.model.id = resp.id
+                }
+            );
     }
 }

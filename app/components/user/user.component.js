@@ -25,8 +25,12 @@ var UserComponent = (function () {
         ];
     };
     UserComponent.prototype.onSubmit = function () {
-        this.userSrvc
-            .Post(this.model);
+        var _this = this;
+        this.userSrvc.Post(this.model)
+            .then(function (resp) {
+            debugger;
+            _this.model.id = resp.id;
+        });
     };
     return UserComponent;
 }());

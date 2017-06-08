@@ -11,15 +11,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
+require("rxjs/add/operator/toPromise");
 var UserService = (function () {
     function UserService(http) {
         this.http = http;
+        this.apiUrl = 'api/user';
     }
     UserService.prototype.Post = function (data) {
-        var url = 'api/user';
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
         return this.http
-            .post(url, data)
-            .subscribe(function (res) { return console.log(res); });
+            .post(this.apiUrl, data)
+            .toPromise()
+            .then(this.extractData)
+            .catch(this.handleErrorPromise);
+        //.subscribe(res => console.log(res));
+    };
+    UserService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body || {};
+    };
+    UserService.prototype.handleErrorPromise = function (error) {
+        console.error(error.message || error);
+        return Promise.reject(error.message || error);
     };
     return UserService;
 }());

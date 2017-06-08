@@ -32,11 +32,12 @@ var searchItem_model_1 = require("./models/searchItem.model");
 var user_service_1 = require("./services/user.service");
 var search_service_1 = require("./services/search.service");
 var routes = [
+    { path: '', redirectTo: 'jokes', pathMatch: 'full' },
     { path: 'jokes', component: jokes_container_component_1.JokeContainerComponent },
     { path: 'di-test', component: parent_container_component_1.ParentDiContainerComponent },
     { path: 'users', component: user_component_1.UserComponent },
     { path: 'itunes-search', component: itunes_search_component_1.ItunesSearchComponent },
-    { path: '', redirectTo: 'jokes', pathMatch: 'full' },
+    { path: '**', component: jokes_container_component_1.JokeContainerComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -52,7 +53,7 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             http_1.HttpModule,
             forms_1.FormsModule,
-            router_1.RouterModule.forRoot(routes)
+            router_1.RouterModule.forRoot(routes, { useHash: true })
         ],
         declarations: [
             app_component_1.AppComponent,

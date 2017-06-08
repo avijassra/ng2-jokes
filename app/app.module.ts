@@ -26,11 +26,12 @@ import { UserService } from './services/user.service';
 import { SearchService } from './services/search.service';
 
 const routes: Routes = [
+    { path: '', redirectTo: 'jokes', pathMatch: 'full' },
     { path: 'jokes', component: JokeContainerComponent },
     { path: 'di-test', component: ParentDiContainerComponent },
     { path: 'users', component: UserComponent },
     { path: 'itunes-search', component: ItunesSearchComponent },
-    { path: '', redirectTo: 'jokes', pathMatch: 'full' },
+    { path: '**', component: JokeContainerComponent }
 ];
 
 @NgModule({
@@ -41,7 +42,7 @@ const routes: Routes = [
         BrowserModule,
         HttpModule,
         FormsModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes, { useHash: true})
     ],
     declarations: [ 
         AppComponent,
